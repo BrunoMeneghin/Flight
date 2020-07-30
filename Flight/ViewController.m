@@ -42,6 +42,8 @@
 
 -(void)loadView {
     ConnectView *view = [ConnectView new];
+   
+    
     [view.connectButton addTarget:self action:@selector(didTapCheckFlightButton:) forControlEvents:UIControlEventTouchUpInside];
     
     self.view = view;

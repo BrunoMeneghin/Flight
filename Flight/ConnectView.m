@@ -13,8 +13,11 @@
 - (instancetype) init {
     if((self = [super init])) {
         UILabel *label = [UILabel new];
-        self.label = label;
+        UIDatePicker *datePicker = [UIDatePicker new];
         
+        self.label = label;
+        self.dataPicker = datePicker;
+       
         ConnectButton *connectButton = [self buttonWithTitle:@"Verify"];
         self.connectButton = connectButton;
         
@@ -26,9 +29,13 @@
         label.translatesAutoresizingMaskIntoConstraints = NO;
         
         connectButton.translatesAutoresizingMaskIntoConstraints = NO;
-        connectButton.backgroundColor = UIColor.cyanColor; 
+        connectButton.backgroundColor = UIColor.cyanColor;
         
+        datePicker = [[UIDatePicker alloc] initWithFrame:CGRectZero];
+        
+       
         [self addSubview:label];
+        [self addSubview:datePicker]; 
         [self addSubview:connectButton];
         
         [connectButton.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = NO;
