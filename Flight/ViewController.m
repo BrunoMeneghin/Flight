@@ -31,24 +31,17 @@
          // awaiting SDK..
     }
 
-    [self changeBackgroundColor:UIColor.whiteColor];
 }
 
 #pragma mark - Setup View
 
-- (void)changeBackgroundColor:(UIColor *)color {
-    self.view.backgroundColor = color;
-}
-
 -(void)loadView {
     ConnectView *view = [ConnectView new];
    
-    
     [view.connectButton addTarget:self action:@selector(didTapCheckFlightButton:) forControlEvents:UIControlEventTouchUpInside];
     
     self.view = view;
 }
-
 
 - (void)presentAlertControllerWithTitle:(NSString *)title
                                 message:(NSString *)message

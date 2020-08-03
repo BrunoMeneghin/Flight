@@ -10,7 +10,7 @@
 
 @interface ViewController : UIViewController
 
-@property(nonatomic) ViewController *rootViewController; 
+@property(nonatomic) ViewController *rootViewController;
 
 @end
 

@@ -17,35 +17,37 @@
         
         self.label = label;
         self.dataPicker = datePicker;
-       
-        ConnectButton *connectButton = [self buttonWithTitle:@"Verify"];
+        
+        ConnectButton *connectButton = [self buttonWithTitle:@" Verify your flight "];
         self.connectButton = connectButton;
+        
         
         self.backgroundColor = UIColor.whiteColor;
         self.translatesAutoresizingMaskIntoConstraints = NO;
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         
-        label.text = @"Your flight";
+        label.text = @"Your travels";
+        
         label.translatesAutoresizingMaskIntoConstraints = NO;
-        
         connectButton.translatesAutoresizingMaskIntoConstraints = NO;
-        connectButton.backgroundColor = UIColor.cyanColor;
+        datePicker.translatesAutoresizingMaskIntoConstraints = NO;
         
-        datePicker = [[UIDatePicker alloc] initWithFrame:CGRectZero];
-        
-       
         [self addSubview:label];
-        [self addSubview:datePicker]; 
+        [self addSubview:datePicker];
         [self addSubview:connectButton];
         
-        [connectButton.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = NO;
+        [datePicker.centerXAnchor constraintEqualToAnchor:connectButton.centerXAnchor].active = YES;
+        [datePicker.centerYAnchor constraintEqualToAnchor:connectButton.bottomAnchor constant:120.0].active = YES;
+        [datePicker sizeToFit];
+        
+        [connectButton.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
         [connectButton.centerYAnchor constraintEqualToAnchor:self.centerYAnchor].active = YES;
         [connectButton sizeToFit];
-
-        [label.centerXAnchor constraintEqualToAnchor:connectButton.centerXAnchor].active = NO;
-        [label.centerYAnchor constraintEqualToAnchor:connectButton.bottomAnchor constant: 50.0].active = YES;
+        
+        [label.centerXAnchor constraintEqualToAnchor:connectButton.centerXAnchor].active = YES;
+        [label.centerYAnchor constraintEqualToAnchor:connectButton.topAnchor constant: -50.0].active = YES;
         [label sizeToFit];
-
+        
     }
     
     return self;
@@ -58,14 +60,14 @@
     ConnectButton *connectionButton = [ConnectButton buttonWithType:UIButtonTypeSystem];
     
     NSDictionary<NSAttributedStringKey, id> *attributes = @{
-                                                            NSFontAttributeName: [UIFont systemFontOfSize:UIFont.systemFontSize weight:UIFontWeightHeavy],
-                                                            NSForegroundColorAttributeName: UIColor.whiteColor,
-                                                            NSKernAttributeName: @2.2,
-                                                            };
+        NSFontAttributeName: [UIFont systemFontOfSize:UIFont.systemFontSize weight:UIFontWeightHeavy],
+        NSForegroundColorAttributeName: UIColor.whiteColor,
+        NSKernAttributeName: @1.5,
+    };
     
     NSAttributedString *attributeTitle = [[NSAttributedString alloc] initWithString:title attributes:attributes];
     [connectionButton setAttributedTitle:attributeTitle forState:UIControlStateNormal];
-                
+    
     return connectionButton;
 }
 

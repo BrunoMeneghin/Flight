@@ -10,17 +10,17 @@
 
 @implementation ConnectButton
 
-+(instancetype)buttonWithType:(UIButtonType)buttonType {
++ (instancetype)buttonWithType:(UIButtonType)buttonType {
     ConnectButton *button = [super buttonWithType:buttonType];
-        
+    
     return button;
 }
 
-+(UIColor *)customBackgroundColor {
++ (UIColor *)customBackgroundColor {
     static UIColor *color;
     
     if(!color) {
-        color = [UIColor colorWithRed:(19 / 255.0) green:(163.0 / 255.0) blue:(77.0 / 255.0) alpha:(1.0)];
+        color = [UIColor colorWithRed:(108 / 255.0) green:(92 / 255.0) blue:(231 / 255.0) alpha:(1.0)];
     }
     
     return color;
@@ -36,8 +36,21 @@
     return color;
 }
 
-- (void)setHighlighted:(BOOL)highlighted {
-    self.backgroundColor = highlighted ? [self.class customHighlightedColor] : [self.class customBackgroundColor];
+- (void)customDesignButton {
+    self.layer.cornerRadius = 8;
+    self.layer.borderWidth = 1.3;
+    self.layer.borderColor = [UIColor colorWithRed:(14.0 / 255.0) green:(185 / 255.0) blue:(67.0 / 255.0) alpha:(1.0)].CGColor;
+    
 }
+
+- (void)setHighlighted:(BOOL)highlighted {
+    
+    self.backgroundColor = highlighted ? [self.class customHighlightedColor] : [self.class customBackgroundColor];
+    
+    if ([self.class customBackgroundColor]) {
+        [self customDesignButton];
+    }
+}
+
 
 @end

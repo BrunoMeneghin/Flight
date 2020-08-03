@@ -9,8 +9,10 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 
+
 @interface AppDelegate ()
 
+// private
 @property(nonatomic, strong) ViewController *rootViewController;
 
 @end
@@ -24,7 +26,7 @@
     self.window.rootViewController = [ViewController new];
     
     self.rootViewController = [ViewController new];
-    self.rootViewController.view.backgroundColor = UIColor.purpleColor; 
+    self.rootViewController.view.backgroundColor = UIColor.cyanColor; 
     
     self.window.rootViewController = self.rootViewController;
     [self.window makeKeyAndVisible];
