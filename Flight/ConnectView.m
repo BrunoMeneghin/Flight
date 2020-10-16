@@ -10,7 +10,8 @@
 
 @implementation ConnectView
 
-- (instancetype) init {
+- (instancetype) init
+{
     if((self = [super init])) {
         UILabel *label = [UILabel new];
         UIDatePicker *datePicker = [UIDatePicker new];
@@ -47,7 +48,6 @@
         [label.centerXAnchor constraintEqualToAnchor:connectButton.centerXAnchor].active = YES;
         [label.centerYAnchor constraintEqualToAnchor:connectButton.topAnchor constant: -50.0].active = YES;
         [label sizeToFit];
-        
     }
     
     return self;
@@ -56,7 +56,8 @@
 
 #pragma mark - Private
 
-- (ConnectButton *)buttonWithTitle:(NSString *)title {
+- (ConnectButton *)buttonWithTitle:(NSString *)title
+{
     ConnectButton *connectionButton = [ConnectButton buttonWithType:UIButtonTypeSystem];
     
     NSDictionary<NSAttributedStringKey, id> *attributes = @{
@@ -65,7 +66,9 @@
         NSKernAttributeName: @1.5,
     };
     
-    NSAttributedString *attributeTitle = [[NSAttributedString alloc] initWithString:title attributes:attributes];
+    NSAttributedString *attributeTitle = [[NSAttributedString alloc] initWithString:title
+                                                                         attributes:attributes];
+    
     [connectionButton setAttributedTitle:attributeTitle forState:UIControlStateNormal];
     
     return connectionButton;

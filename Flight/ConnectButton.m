@@ -10,40 +10,45 @@
 
 @implementation ConnectButton
 
-+ (instancetype)buttonWithType:(UIButtonType)buttonType {
++ (instancetype)buttonWithType:(UIButtonType)buttonType
+{
     ConnectButton *button = [super buttonWithType:buttonType];
     
     return button;
 }
 
-+ (UIColor *)customBackgroundColor {
++ (UIColor *)customBackgroundColor
+{
     static UIColor *color;
     
-    if(!color) {
-        color = [UIColor colorWithRed:(108 / 255.0) green:(92 / 255.0) blue:(231 / 255.0) alpha:(1.0)];
-    }
+    if(!color)
+        color = [UIColor colorWithRed:(80.0 / 255.0) green:(75.0 / 255.0)
+                                                      blue:(180.0 / 255.0) alpha:(1.0)];
     
     return color;
 }
 
-+ (UIColor *)customHighlightedColor {
++ (UIColor *)customHighlightedColor
+{
     static UIColor *color;
     
-    if(!color) {
-        color = [UIColor colorWithRed:(14.0 / 255.0) green:(185 / 255.0) blue:(67.0 / 255.0) alpha:(1.0)];
-    }
+    if(!color)
+        color = [UIColor colorWithRed:(60.0 / 255.0) green:(120.0 / 255.0)
+                                                        blue:(33.0 / 255.0) alpha:(1.0)];
     
     return color;
 }
 
-- (void)customDesignButton {
+- (void)customDesignButton
+{
+    
     self.layer.cornerRadius = 8;
     self.layer.borderWidth = 1.3;
     self.layer.borderColor = [UIColor colorWithRed:(14.0 / 255.0) green:(185 / 255.0) blue:(67.0 / 255.0) alpha:(1.0)].CGColor;
-    
 }
 
-- (void)setHighlighted:(BOOL)highlighted {
+- (void)setHighlighted:(BOOL)highlighted
+{
     
     self.backgroundColor = highlighted ? [self.class customHighlightedColor] : [self.class customBackgroundColor];
     
@@ -51,6 +56,5 @@
         [self customDesignButton];
     }
 }
-
 
 @end
