@@ -14,9 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ConnectView : UIView
 
 @property (nonatomic) UILabel *label;
-
 @property (nonatomic) ConnectButton *connectButton;
-
 @property (nonatomic) UIDatePicker *dataPicker; 
 
 @end

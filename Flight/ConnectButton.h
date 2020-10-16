@@ -12,9 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ConnectButton : UIButton
 
-+(UIColor *)customBackgroundColor;
-
-+(UIColor *)customHighlightedColor;
++ (UIColor *)customBackgroundColor;
++ (UIColor *)customHighlightedColor;
 
 
 @end
